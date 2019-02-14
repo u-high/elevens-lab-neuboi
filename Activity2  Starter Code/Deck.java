@@ -31,15 +31,20 @@ public class Deck {
   */
  public Deck(String[] ranks, String[] suits, int[] values) {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+   cards = new ArrayList<Card>();
+   
    int y = ranks.length;
    int yi = suits.length;
    int yio = values.length;
    if(y == yi && yi == yio && y == yi){
      for(int i = 0; i < y; i++){
        Card card = new Card(ranks[i], suits[i], values[i]); 
+       System.out.println(card);
        cards.add(card);
+     } 
+   } else {
+      System.out.println("Length Inconsistancy: Missing Value"); 
      }
-   }
  }
 
 
@@ -49,6 +54,12 @@ public class Deck {
   */
  public boolean isEmpty() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+   if(cards.size() == 0){
+     return true;
+   } else {
+    return false; 
+   }
+     
  }
 
  /**
@@ -57,6 +68,7 @@ public class Deck {
   */
  public int size() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+   return size;
  }
 
  /**
@@ -65,6 +77,7 @@ public class Deck {
   */
  public void shuffle() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+   
  }
 
  /**
@@ -74,6 +87,13 @@ public class Deck {
   */
  public Card deal() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+   if(size != 0){
+     int x = size - 1;
+     return cards.get(x);
+   }
+   size--;
+    return null; 
+   
  }
 
  /**
