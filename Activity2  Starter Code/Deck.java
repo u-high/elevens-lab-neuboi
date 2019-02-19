@@ -36,12 +36,17 @@ public class Deck {
    int y = ranks.length;
    int yi = suits.length;
    int yio = values.length;
+   
    if(y == yi && yi == yio && y == yi){
-     for(int i = 0; i < y; i++){
-       Card card = new Card(ranks[i], suits[i], values[i]); 
-       System.out.println(card);
-       cards.add(card);
-     } 
+     for(int j = 0; j < y; j++){
+       
+       for(int i = 0; i < suits.length; i++){
+         Card card = new Card(ranks[j], suits[i], values[j]); 
+         cards.add(card);
+       }
+       
+     }
+     System.out.println(cards);
    } else {
       System.out.println("Length Inconsistancy: Missing Value"); 
      }
